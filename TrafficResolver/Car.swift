@@ -31,6 +31,7 @@ class Car {
     var runOutOfPatience:(() -> ())?
     var imageName = "car_from_left"
     var angle = 0.0
+    var speed = 5;
     init(position: CGPoint, direction : Direction) {
         self.position = position
         self.direction = direction
@@ -56,6 +57,8 @@ class Car {
         
         baseBar = SKSpriteNode(color: SKColor.whiteColor(),size: CGSizeMake(40, 5))
         baseBar.position = CGPoint(x: position.x,y: position.y + 15)
+        
+        
         scene.addChild(baseBar)
        
         bar = SKSpriteNode(color: SKColor.greenColor(),size: CGSizeMake(40, 5))
@@ -86,8 +89,8 @@ class Car {
                 if(Int(position.x) < leftMax){
                     return CGPoint(x:CGFloat(rightMax + 50 * Int(arc4random_uniform(3))),y:position.y)
                 }
-                else if(signalState.left == 0 || signalState.left < (Int(position.x) - 5) || signalState.left > (Int(position.x))){
-                    return CGPoint(x:position.x - 5,y:position.y)
+                else if(signalState.left == 0 || signalState.left < (Int(position.x) - speed) || signalState.left > (Int(position.x))){
+                    return CGPoint(x:position.x - CGFloat(speed),y:position.y)
                 }
                 else{
                     signalState.left += 50;
@@ -106,8 +109,8 @@ class Car {
                 if(Int(position.x) > rightMax){
                     return CGPoint(x:CGFloat(-50*Int(arc4random_uniform(3))),y:position.y)
                 }
-                else if(signalState.right == 0 || signalState.right > Int(position.x) + 5 || signalState.right < (Int(position.x))){
-                    return CGPoint(x:position.x + 5,y:position.y)
+                else if(signalState.right == 0 || signalState.right > Int(position.x) + speed || signalState.right < (Int(position.x))){
+                    return CGPoint(x:position.x + CGFloat(speed),y:position.y)
                 }
                 else{
                     signalState.right -= 50;
@@ -124,10 +127,10 @@ class Car {
         case .Up:
             if(!stoped){
                 if(Int(position.y) > topMax){
-                    return CGPoint(x:position.x,y:CGFloat(bottomMax + (-50*Int(arc4random_uniform(3)))))
+                    return CGPoint(x:position.x,y:CGFloat(bottomMax + (-100*Int(arc4random_uniform(2)))))
                 }
-                else if(signalState.top == 0 || signalState.top > Int(position.y) + 5 || signalState.top < (Int(position.y))){
-                    return CGPoint(x:position.x ,y:position.y + 5)
+                else if(signalState.top == 0 || signalState.top > Int(position.y) + speed || signalState.top < (Int(position.y))){
+                    return CGPoint(x:position.x ,y:position.y + CGFloat(speed))
                 }
                 else{
                     signalState.top -= 50;
@@ -145,10 +148,10 @@ class Car {
         case .Down:
             if(!stoped){
                 if(Int(position.y) < bottomMax){
-                    return CGPoint(x:position.x,y:CGFloat(50*Int(arc4random_uniform(3))))
+                    return CGPoint(x:position.x,y:CGFloat(100*Int(arc4random_uniform(2))))
                 }
-                else if(signalState.bottom == -1 || signalState.bottom < Int(position.y) - 5 || signalState.bottom > (Int(position.y))){
-                    return CGPoint(x:position.x ,y:position.y - 5)
+                else if(signalState.bottom == -1 || signalState.bottom < Int(position.y) - speed || signalState.bottom > (Int(position.y))){
+                    return CGPoint(x:position.x ,y:position.y - CGFloat(speed))
                 }
                 else{
                     signalState.bottom += 50;

@@ -107,6 +107,10 @@ class GameScene: SKScene {
 
     func drawEverything(){
         anchorPoint = CGPoint(x: 0, y: 1.0)
+        let background = SKSpriteNode(imageNamed: "grass_background")
+        background.position = CGPoint(x: 0, y: 0)
+        background.size = CGSizeMake(1600, 800);
+        addChild(background)
         
         let verticalRoad = SKSpriteNode(imageNamed: "background")
         verticalRoad.position = CGPoint(x: 330, y: 0)
@@ -160,14 +164,48 @@ class GameScene: SKScene {
             savedScore = NSUserDefaults.standardUserDefaults().objectForKey("HighestScore")? as Int
             println(savedScore)
         }
+        displayHouse("home_1", x: 90, y: -95)
+        displayHouse("home_2", x: 160, y: -95)
+        displayHouse("home",x: 230, y: -95)
+        displayHouse("folder_home", x: 440, y: -95)
+        displayHouse("house", x: 520, y: -95)
+        displayHouse("home_3", x: 600, y: -95)
+
+        displayHouse("tree", x: 40, y: -220)
+        displayHouse("tree", x: 65, y: -220)
+        displayHouse("tree", x: 80, y: -220)
+        displayHouse("tree", x: 140, y: -220)
+        displayHouse("tree", x: 200, y: -220)
+
+        
+        displayHouse("tree", x: 430, y: -220)
+        displayHouse("tree", x: 440, y: -220)
+        displayHouse("tree", x: 455, y: -220)
+        displayHouse("tree", x: 480, y: -220)
+        displayHouse("tree", x: 495, y: -220)
+        displayHouse("tree", x: 530, y: -220)
+
+        displayHouse("house_1", x: 230, y: -280)
+        displayHouse("house_2", x: 420, y: -280)
+
         
         winner.fontSize = 20;
-        winner.fontColor = SKColor.whiteColor();
-        winner.position = CGPoint(x: 540,y: -350)
+        winner.fontColor = SKColor.blackColor();
+        winner.position = CGPoint(x: 520,y: -350)
+        winner.fontName = "AmericanTypewriter-regular"
+
         winner.text = "Your score 0 \n high-score \(savedScore)"
         self.addChild(winner)
         startTicking()
         
+    }
+    
+    
+    func displayHouse(image : String, x: Int, y: Int){
+        let horizontalRoad = SKSpriteNode(imageNamed: image)
+        horizontalRoad.position = CGPoint(x: x, y: y)
+        horizontalRoad.size = CGSizeMake(60, 60);
+        addChild(horizontalRoad)
     }
     
     func addSignal(node:SKSpriteNode,image: String,x:Int,y:Int){
