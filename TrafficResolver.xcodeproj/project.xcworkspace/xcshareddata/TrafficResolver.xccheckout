@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6CD658C8-CBF9-40E5-A370-A4BAAE7AD046</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TrafficResolver</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E3414AC03A4E5EF8477B8DDC3F2653F21E992A45</key>
+		<string>https://github.com/avipul49/trafficresolver.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TrafficResolver.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E3414AC03A4E5EF8477B8DDC3F2653F21E992A45</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/avipul49/trafficresolver.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E3414AC03A4E5EF8477B8DDC3F2653F21E992A45</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3414AC03A4E5EF8477B8DDC3F2653F21E992A45</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TrafficResolver</string>
+		</dict>
+	</array>
+</dict>
+</plist>

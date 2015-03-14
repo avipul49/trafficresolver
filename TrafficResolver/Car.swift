@@ -84,7 +84,7 @@ class Car {
         case .Left:
             if(!stoped){
                 if(Int(position.x) < leftMax){
-                    return CGPoint(x:CGFloat(rightMax),y:position.y)
+                    return CGPoint(x:CGFloat(rightMax + 50 * Int(arc4random_uniform(3))),y:position.y)
                 }
                 else if(signalState.left == 0 || signalState.left < (Int(position.x) - 5) || signalState.left > (Int(position.x))){
                     return CGPoint(x:position.x - 5,y:position.y)
@@ -104,7 +104,7 @@ class Car {
         case .Right:
             if(!stoped){
                 if(Int(position.x) > rightMax){
-                    return CGPoint(x:0,y:position.y)
+                    return CGPoint(x:CGFloat(-50*Int(arc4random_uniform(3))),y:position.y)
                 }
                 else if(signalState.right == 0 || signalState.right > Int(position.x) + 5 || signalState.right < (Int(position.x))){
                     return CGPoint(x:position.x + 5,y:position.y)
@@ -124,7 +124,7 @@ class Car {
         case .Up:
             if(!stoped){
                 if(Int(position.y) > topMax){
-                    return CGPoint(x:position.x,y:CGFloat(bottomMax))
+                    return CGPoint(x:position.x,y:CGFloat(bottomMax + (-50*Int(arc4random_uniform(3)))))
                 }
                 else if(signalState.top == 0 || signalState.top > Int(position.y) + 5 || signalState.top < (Int(position.y))){
                     return CGPoint(x:position.x ,y:position.y + 5)
@@ -145,7 +145,7 @@ class Car {
         case .Down:
             if(!stoped){
                 if(Int(position.y) < bottomMax){
-                    return CGPoint(x:position.x,y:CGFloat(topMax))
+                    return CGPoint(x:position.x,y:CGFloat(50*Int(arc4random_uniform(3))))
                 }
                 else if(signalState.bottom == -1 || signalState.bottom < Int(position.y) - 5 || signalState.bottom > (Int(position.y))){
                     return CGPoint(x:position.x ,y:position.y - 5)
