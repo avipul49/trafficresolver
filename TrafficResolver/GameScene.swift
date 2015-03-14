@@ -44,7 +44,7 @@ class GameScene: SKScene {
                 gameState.move(signalState)
                 gameState.detectCollosion()
                 score++
-                winner.text = "Your score \(Int(score/10)) high-score \(savedScore)"
+                winner.text = "Your score \(Int(score/10))"
             }
         }
     }
@@ -171,19 +171,19 @@ class GameScene: SKScene {
         displayHouse("house", x: 520, y: -95)
         displayHouse("home_3", x: 600, y: -95)
 
-        displayHouse("tree", x: 40, y: -220)
-        displayHouse("tree", x: 65, y: -220)
-        displayHouse("tree", x: 80, y: -220)
-        displayHouse("tree", x: 140, y: -220)
-        displayHouse("tree", x: 200, y: -220)
+        displayHouse("tree", x: 40, y: -240)
+        displayHouse("tree", x: 65, y: -240)
+        displayHouse("tree", x: 80, y: -240)
+        displayHouse("tree", x: 140, y: -240)
+        displayHouse("tree", x: 200, y: -240)
 
         
-        displayHouse("tree", x: 430, y: -220)
-        displayHouse("tree", x: 440, y: -220)
-        displayHouse("tree", x: 455, y: -220)
-        displayHouse("tree", x: 480, y: -220)
-        displayHouse("tree", x: 495, y: -220)
-        displayHouse("tree", x: 530, y: -220)
+        displayHouse("tree", x: 430, y: -240)
+        displayHouse("tree", x: 440, y: -240)
+        displayHouse("tree", x: 455, y: -240)
+        displayHouse("tree", x: 480, y: -240)
+        displayHouse("tree", x: 495, y: -240)
+        displayHouse("tree", x: 530, y: -240)
 
         displayHouse("house_1", x: 230, y: -280)
         displayHouse("house_2", x: 420, y: -280)
@@ -191,11 +191,19 @@ class GameScene: SKScene {
         
         winner.fontSize = 20;
         winner.fontColor = SKColor.blackColor();
-        winner.position = CGPoint(x: 520,y: -350)
+        winner.position = CGPoint(x: 120,y: -30)
         winner.fontName = "AmericanTypewriter-regular"
 
-        winner.text = "Your score 0 \n high-score \(savedScore)"
+        winner.text = "Your score \(savedScore)"
+        var highscore = SKLabelNode()
+        highscore.fontSize = 20;
+        highscore.fontColor = SKColor.blackColor();
+        highscore.position = CGPoint(x: 550,y: -30)
+        highscore.fontName = "AmericanTypewriter-regular"
+        
+        highscore.text = "high-score \(savedScore)"
         self.addChild(winner)
+        self.addChild(highscore)
         startTicking()
         
     }

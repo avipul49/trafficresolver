@@ -9,7 +9,7 @@
 import SpriteKit
 
 class GameState {
-    var cars = [Car](count: 8, repeatedValue: Car(position: CGPoint(x:0,y:0),direction:Direction.Right))
+    var cars = [Car](count: 9, repeatedValue: Car(position: CGPoint(x:0,y:0),direction:Direction.Right))
     var runOutOfPatience:(() -> ())?
     init(){
        restart()
@@ -60,5 +60,8 @@ class GameState {
         initCars("right_car", x: 305, y: 20, position: 4, direction: Direction.Down,xchange: 0,ychange: 200 ,angle:M_PI_2)
         
         initCars("car_from_left", x: 358, y: -400, position: 6, direction: Direction.Up,xchange: 0,ychange: -200 ,angle:M_PI_2)
+        cars[8] = Car(image:"car_from_left",position: CGPoint(x:50,y:-208),direction:Direction.Right,angle:0)
+        
+        cars[8].speed = 15
     }
 }

@@ -31,7 +31,7 @@ class Car {
     var runOutOfPatience:(() -> ())?
     var imageName = "car_from_left"
     var angle = 0.0
-    var speed = 5;
+    var speed = 7;
     init(position: CGPoint, direction : Direction) {
         self.position = position
         self.direction = direction
